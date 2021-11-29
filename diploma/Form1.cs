@@ -53,7 +53,8 @@ namespace diploma
                 Vertex v = new Vertex(e.X, e.Y, G);
                 vs.Add(v);
             }
-            label1.Text = selectCounter.ToString();
+            //label1.Text = selectCounter.ToString();
+            Invalidate();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -95,6 +96,7 @@ namespace diploma
                 label1.Text += Edge.x1 + " " + Edge.x2;
                 clones.Clear();
             }
+            Invalidate();
         }
     }
 }

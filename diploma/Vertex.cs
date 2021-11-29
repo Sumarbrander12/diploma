@@ -10,11 +10,12 @@ namespace diploma
     public class Vertex
     {
         static int Num;
-        public int X,Y, NumCarr,diam;
+        public int X, Y, NumCarr;
+        static public int diam =17;
         int extraX;
         Graphics G;
         Pen pen;
-        Brush brush;
+        Brush brush,brush2;
         Rectangle rec;
         Font font;
         public bool isSelected;
@@ -31,6 +32,7 @@ namespace diploma
             pen = new Pen(Color.Black);
             font = new Font("Times New Roman", 15, FontStyle.Bold, GraphicsUnit.Pixel);
             brush = Brushes.Black;
+            brush2 = Brushes.White;
             isSelected = false;
             Draw();
 
@@ -44,11 +46,11 @@ namespace diploma
         public void Draw()
         {
             extraX = X - 2;
-            G.DrawEllipse(pen, rec);
+            G.FillEllipse(brush, rec);
             if(NumCarr < 10)
-                G.DrawString(NumCarr.ToString(), font, brush, X+2,Y);
+                G.DrawString(NumCarr.ToString(), font, brush2, X+2,Y);
             else
-                G.DrawString(NumCarr.ToString(), font, brush, extraX, Y);
+                G.DrawString(NumCarr.ToString(), font, brush2, extraX, Y);
 
         }
         public void Select()
